@@ -12,15 +12,15 @@ const SingleItem = () => {
   const dispatch = useDispatch();
   console.log(product);
 
-  const fetchProductDetail = async () => {
-    const response = await axios
-      .get(`https://fakestoreapi.com/products/${productId}`)
-      .catch((err) => {
-        console.log("err", err);
-      });
-    dispatch(selectedProduct(response.data));
-  };
   useEffect(() => {
+    const fetchProductDetail = async () => {
+      const response = await axios
+        .get(`https://fakestoreapi.com/products/${productId}`)
+        .catch((err) => {
+          console.log("err", err);
+        });
+      dispatch(selectedProduct(response.data));
+    };
     if (productId && productId !== "") fetchProductDetail();
   }, [productId]);
   console.log("Product:", product);
@@ -31,7 +31,7 @@ const SingleItem = () => {
       ) : (
         <div className={styles.cards}>
           <div className={styles.container}>
-            <img src={image} alt={image} />
+            <img src={image} alt="image" />
             <div>
               Title : <span>{title}</span>
             </div>

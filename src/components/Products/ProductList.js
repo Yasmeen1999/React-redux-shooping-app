@@ -11,15 +11,16 @@ import ProductsComponents from "./ProductsComponents";
 const ProductList = () => {
   const dispatch = useDispatch();
   const products = useSelector((state) => state);
-  const fetchProducts = async () => {
-    const response = await axios
-      .get("https://fakestoreapi.com/products")
-      .catch((err) => {
-        console.log("err", err);
-      });
-    dispatch(setProducts(response.data));
-  };
+
   useEffect(() => {
+    const fetchProducts = async () => {
+      const response = await axios
+        .get("https://fakestoreapi.com/products")
+        .catch((err) => {
+          console.log("err", err);
+        });
+      dispatch(setProducts(response.data));
+    };
     fetchProducts();
   }, []);
   console.log("Products:", products);
