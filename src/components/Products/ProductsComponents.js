@@ -12,7 +12,7 @@ const ProductsComponents = () => {
       <div className={styles.containerWrap} key={id}>
         <div className={styles.cards}>
           <div className={styles.container}>
-            <img src={image} alt="img" />
+            <img src={image} alt={image} />
             <div>
               Title : <span>{title}</span>
             </div>

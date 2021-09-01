@@ -31,7 +31,7 @@ const SingleItem = () => {
       ) : (
         <div className={styles.cards}>
           <div className={styles.container}>
-            <img src={image} alt="" />
+            <img src={image} alt={image} />
             <div>
               Title : <span>{title}</span>
             </div>
