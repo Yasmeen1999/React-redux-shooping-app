@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./ProductsComponents.module.css";
 import { useSelector } from "react-redux";
-import ProductList from "./ProductList";
+
 import { Link } from "react-router-dom";
 
 const ProductsComponents = () => {
